@@ -20,6 +20,7 @@ public class SocketServer {
         DataInputStream dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
         //用于向客户端发送数据
         DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
+        System.out.println("服务器启动完毕，等待数据传入");
         do {
             double radius = dis.readDouble();
             System.out.println("服务器端收到数据：" + radius);
