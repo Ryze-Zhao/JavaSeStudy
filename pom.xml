@@ -10,6 +10,14 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>network</module>
+        <module>data-type</module>
+        <module>exception</module>
+        <module>io</module>
+        <module>lambda</module>
+        <module>mysql</module>
+        <module>mythread</module>
+        <module>redis</module>
+        <module>reflection</module>
     </modules>
 
 
