@@ -12,6 +12,7 @@ import java.net.Socket;
  */
 public class SocketServer {
     public static void main(String[] args) throws IOException {
+        System.out.println("服务器启动完毕，等待数据传入");
         // 在端口上创建一个服务器套接字
         ServerSocket serverSocket = new ServerSocket(8080);
         // 监听来自客户端的连接
@@ -20,7 +21,6 @@ public class SocketServer {
         DataInputStream dis = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
         //用于向客户端发送数据
         DataOutputStream dos = new DataOutputStream(new BufferedOutputStream(socket.getOutputStream()));
-        System.out.println("服务器启动完毕，等待数据传入");
         do {
             double radius = dis.readDouble();
             System.out.println("服务器端收到数据：" + radius);
