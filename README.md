@@ -1,8 +1,7 @@
-# JavaSeStudy，算法排序学习
+# JavaSeStudy，JavaSe基础学习
 
 #### 项目介绍
-主要是学习JavaSE
-可以参考设计模式博客汇总
+主要是学习JavaSE，可以参考汇总
 https://www.hehaozhao.top/front/articlePage/xtasxcleui
 
 #### 软件架构
