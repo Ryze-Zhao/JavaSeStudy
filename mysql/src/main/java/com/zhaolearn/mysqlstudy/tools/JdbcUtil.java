@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class JdbcUtil {
     //刚刚新建数据库的路径，后面是避免时区错误
-    public static final String URL = "jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8";
+    public static final String URL = "jdbc:mysql://127.0.0.1:3306/java_mysql?serverTimezone=GMT%2B8";
     public static final String USER = "root";//用户名
     public static final String PASSWORD = "mysql123";//密码
     private static Connection conn = null;
