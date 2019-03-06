@@ -4,7 +4,7 @@ SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for human
+-- Table structure for humanTest
 -- ----------------------------
 DROP TABLE IF EXISTS `human`;
 CREATE TABLE `human`  (
