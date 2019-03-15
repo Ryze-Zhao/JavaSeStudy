@@ -31,4 +31,3 @@ javase-study父模块
 1. RyzeZhao
 
 #### 
-1.  这里测试使用SSH连接GitHub和Gitee
