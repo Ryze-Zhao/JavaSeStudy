@@ -24,8 +24,8 @@ javase-study父模块
 7.  network         JavaSE：网络编程
 8.  redis           Redis客户端使用（Java）
 9.  reflection      JavaSE：反射
-10. comment         Java尚硅谷_宋红康：注释
-
+10. atguigu_java    Java尚硅谷_宋红康
+    10.1    com.zhaolearn.comment   注释
 
 #### 参与贡献
 1. RyzeZhao
