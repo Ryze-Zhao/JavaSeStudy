@@ -15,8 +15,6 @@ https://www.hehaozhao.top/front/articlePage/xtasxcleui
 #### 使用说明
 javase-study父模块
 
-
-
 1.  data-type       JavaSE：基本类型与引用类型的说明和传参修改问题
 2.  exception       JavaSE：异常处理
 3.  io              JavaSE：IO流
@@ -26,6 +24,8 @@ javase-study父模块
 7.  network         JavaSE：网络编程
 8.  redis           Redis客户端使用（Java）
 9.  reflection      JavaSE：反射
+10. comment         Java尚硅谷_宋红康：注释
+
 
 #### 参与贡献
 1. RyzeZhao
