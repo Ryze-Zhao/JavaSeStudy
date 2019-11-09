@@ -25,8 +25,18 @@ javase-study父模块
 8.  redis           Redis客户端使用（Java）
 9.  reflection      JavaSE：反射
 10. atguigu_java    Java尚硅谷_宋红康
-    10.1    com.zhaolearn.comment   注释
-
+    10.1    com.zhaolearn.comment                   注释
+    10.2    com.zhaolearn.naming_conventions        命名规范
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 #### 参与贡献
 1. RyzeZhao
 
