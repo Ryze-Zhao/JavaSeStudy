@@ -1,3 +1,5 @@
+package com.zhaolearn.variable;
+
 /*
 强制类型转换：自动类型提升运算的逆运算。
 1.需要使用强转符：()
