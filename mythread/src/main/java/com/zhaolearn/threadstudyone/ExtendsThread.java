@@ -6,6 +6,7 @@ package com.zhaolearn.threadstudyone;
  */
 public class ExtendsThread extends Thread {//必须第一步，继承Thread
     //必须第二步，重写run方法
+    @Override
     public void run(){
         System.out.println("我是重写的run方法啊1");
     }
