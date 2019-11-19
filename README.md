@@ -31,8 +31,9 @@ javase-study父模块
     10.4    com.zhaolearn.decimal                   进制
     10.5    com.zhaolearn.operator                  运算符
     
-    
-    
+11. date            JavaSE：时间操作    
+    11.1    com.zhaolearn.jdk8date                  jdk8全新的时间处理工具类
+        （LocalDateTime：时间处理类，最高精确到纳秒；LocalDate：时间处理类，最高精确到天；DateTimeFormatter：时间格式化；ZoneId：时区设置类）
     
     
     

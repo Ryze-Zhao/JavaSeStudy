@@ -19,6 +19,7 @@
         <module>redis</module>
         <module>reflection</module>
         <module>atguigu_java</module>
+        <module>date</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
