@@ -20,6 +20,7 @@
         <module>reflection</module>
         <module>atguigu_java</module>
         <module>date</module>
+        <module>stream</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
