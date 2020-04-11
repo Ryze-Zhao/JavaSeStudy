@@ -3,7 +3,7 @@ package com.zhaolearn.lambda;
 /**
  * Hello world!
  */
-public class LambdaStudy {
+public class LambdaCalculation {
     public static void main(String[] args) {
         //接收2个参数，不写类型，也不写return，直接返回他们的和
         LambdaInterface addition = (h, e) -> e + h;
