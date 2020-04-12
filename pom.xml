@@ -13,14 +13,12 @@
         <module>data-type</module>
         <module>exception</module>
         <module>io</module>
-        <module>lambda</module>
         <module>mysql</module>
         <module>mythread</module>
         <module>redis</module>
         <module>reflection</module>
         <module>atguigu_java</module>
-        <module>date</module>
-        <module>stream</module>
+        <module>java8_new_features</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
