@@ -30,7 +30,8 @@ javase-study父模块
     9.2.2   deep                                Java8：Lambda表达式：较全面学习
         9.2.2.1     study1                          Java8：Lambda表达式与函数式接口；JDK8新特性；Lambda表达式；格式及事例；函数式(Functional)接口；遍历集合；线程使用等；
         9.2.2.2     study2                          Java8：方法引用与构造器引用
- 9.3    stream                              Java8：JDK8：Stream   
+ 9.3    optional                            Java8：Optional类
+ 9.4    stream                              Java8：JDK8：Stream   
    
    
 
