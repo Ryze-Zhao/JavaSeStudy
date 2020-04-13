@@ -1,7 +1,10 @@
 package com.zhaolearn.stream.collectors;
 
 
+import org.junit.Test;
+
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -17,19 +20,19 @@ public class StreamDemo {
          * 以下为Stream的创建流方式
          *
          */
-        List<String> gList = Stream.of("a","b","c","d","e").collect(Collectors.toList());
+        List<String> gList = Stream.of("a", "b", "c", "d", "e").collect(Collectors.toList());
         //创建流：二1、使用Collection下的 stream() 和 parallelStream() 方法
         //获得串行流
-       Stream<String> gStream1= gList.stream();
+        Stream<String> gStream1 = gList.stream();
         //获得并行流
-        Stream<String> gStream2= gList.parallelStream();
+        Stream<String> gStream2 = gList.parallelStream();
 
         //创建流：二2、使用Arrays 中的 stream() 方法，将数组转成流
         Integer[] nums = new Integer[10];
         Stream<Integer> gStream3 = Arrays.stream(nums);
 
         //创建流：二3、使用Stream中的静态方法：of()、iterate()、generate()
-        Stream<Integer> gStream4 = Stream.of(0,2,4,6,8);
+        Stream<Integer> gStream4 = Stream.of(0, 2, 4, 6, 8);
         Stream<Integer> gStream5 = Stream.iterate(1, (x) -> x + 2).limit(5);
         gStream5.forEach(System.out::println); //1 3 5 7 9
         Stream<Double> gStream6 = Stream.generate(Math::random).limit(5);
@@ -45,6 +48,17 @@ public class StreamDemo {
         Pattern pattern = Pattern.compile(",");
         Stream<String> gStream8 = pattern.splitAsStream("a,b,c,d");
         gStream8.forEach(System.out::println);
+
+        //创建流：二6、可以使用静态方法 Stream.iterate()（迭代）
+//      public static<T> Stream<T> iterate(final T seed, final UnaryOperator<T> f)
+        //遍历前10个偶数,去掉limit就是会无限加下去
+        Stream.iterate(0, t -> t + 2).limit(10).forEach(System.out::println);
+
+        //创建流：二7、可以使用静态方法 Stream.generate()（生成）,创建无限流。
+//      public static<T> Stream<T> generate(Supplier<T> s)
+        //去掉limit就是会无限加下去
+        Stream.generate(Math::random).limit(10).forEach(System.out::println);
+
 
         /**
          * 以下为Stream的数据源
@@ -100,7 +114,6 @@ public class StreamDemo {
 //        skip----------->Student(num=4, name=C/C++)
 //        skip----------->Student(num=5, name=Java)
 //        skip----------->Student(num=1, name=Java)
-
 
 
         /**
@@ -168,6 +181,11 @@ public class StreamDemo {
 //        flatMap----------->1
 //        flatMap----------->2
 //        flatMap----------->3
+
+
+
+
+
 
 
         /**
@@ -248,7 +266,6 @@ public class StreamDemo {
 //        min----------->1
 
 
-
         /**
          * 以下为Stream的终止操作的归约
          *
@@ -271,13 +288,13 @@ public class StreamDemo {
         //串行
         Integer reduceT = reduceList.stream().reduce(0,
                 (x1, x2) -> x1 + x2,//串行流走的是这个
-                (x1, x2) ->  x1 * x2);
+                (x1, x2) -> x1 * x2);
         System.out.println("reduceT----------->" + reduceT);//84
 
         //并行
         Integer reduceFo = reduceList.parallelStream().reduce(0,
                 (x1, x2) -> x1 + x2,
-                (x1, x2) ->  x1 * x2);//并行流走的是这个
+                (x1, x2) -> x1 * x2);//并行流走的是这个
         System.out.println("reduceFo----------->" + reduceFo);//1*2*3*5*5*21*35*7=53858750
         //结果
 //        reduceF----------->84
@@ -286,13 +303,33 @@ public class StreamDemo {
 //        reduceFo----------->3858750
 
 
-
-
-
         //collect（Collector c）将流转换为其他形式。接收一个Collector接口的实现，用于给Stream中元素做汇总的方法
         List<Student> collect1 = Stream.of(
                 new Student(1, "Java"), new Student(2, "PHP"),
                 new Student(3, "Python"), new Student(4, "C/C++"),
                 new Student(5, "Java"), new Student(1, "Java")).collect(Collectors.toList());
+    }
+
+    @Test
+    public void test1(){
+//        如果多层操作，那么map会包含多层，而flatmap会整合为1个
+        List<String> list = Arrays.asList("aa", "bb", "cc", "dd");
+        Stream<Stream<Character>> streamStream = list.stream().map(StreamDemo::fromStringToStream);
+        streamStream.forEach(s ->{
+            streamStream.forEach(System.out::println);
+        });
+        System.out.println("***************************");
+//        flatMap(Function f)——接收一个函数作为参数，将流中的每个值都换成另一个流，然后把所有流连接成一个流。
+        Stream<Character> characterStream = list.stream().flatMap(StreamDemo::fromStringToStream);
+        characterStream.forEach(System.out::println);
+    }
+
+    //将字符串中的多个字符构成的集合转换为对应的Stream的实例
+    public static Stream<Character> fromStringToStream(String str){//aa
+        ArrayList<Character> list = new ArrayList<>();
+        for(Character c : str.toCharArray()){
+            list.add(c);
+        }
+        return list.stream();
     }
 }
