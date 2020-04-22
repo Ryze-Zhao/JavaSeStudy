@@ -19,6 +19,7 @@
         <module>reflection</module>
         <module>atguigu_java</module>
         <module>java8_new_features</module>
+        <module>proxy</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
